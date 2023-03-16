@@ -1,0 +1,20 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "Ajax 활용 실습 레포",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyon99/Ajax.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boyon99/Ajax/issues"
+  },
+  "homepage": "https://github.com/boyon99/Ajax#readme"
+}
