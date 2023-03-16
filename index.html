@@ -9,43 +9,13 @@
 </head>
 
 <body>
-  <h1><a onclick="
-    fetch('data/web').then(function(res){
-      // res에 응답 객체가 저장된다.
-      if(res.status == '404'){
-        alert('not found')
-      }else{
-        res.text().then(function(text){
-        document.querySelector('article').innerHTML = text;
-      })
-      }
-    })">WEB</a></h1>
+  <h1><a onclick="fetchPage('web')">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">
   <ol>
-    <li><a onclick="
-      fetch('data/html').then(function(res){
-        // res에 응답 객체가 저장된다.
-        if(res.status == '404'){
-          alert('not found')
-        }else{
-          res.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-        }
-      })">HTML</a></li>
-    <li><a onclick="
-      fetch('data/css').then(function(res){
-        // res에 응답 객체가 저장된다.
-        if(res.status == '404'){
-          alert('not found')
-        }else{
-          res.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-        })
-        }
-      })">css</a></li>
+    <li><a onclick="fetchPage('html')">HTML</a></li>
+    <li><a onclick="fetchPage('css')">css</a></li>
   </ol>
   <article>
     <h2>WEB</h2>
@@ -60,7 +30,20 @@
     </p>
   </article>
 
-
+  <script>
+    function fetchPage(name) {
+      fetch(`data/${name}`).then(function (res) {
+        // res에 응답 객체가 저장된다.
+        if (res.status == '404') {
+          alert('not found')
+        } else {
+          res.text().then(function (text) {
+            document.querySelector('article').innerHTML = text;
+          })
+        }
+      })
+    }
+  </script>
 </body>
 
 </html>
